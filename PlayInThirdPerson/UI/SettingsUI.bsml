@@ -1,0 +1,4 @@
+﻿﻿<settings-container>
+  <bool-setting text='Enabled' value='boolEnable'/>
+  <slider-setting text='Offset Z' min='-2' max='0' increment='0.1' value='offsetZ' integer-only='false' />
+</settings-container>

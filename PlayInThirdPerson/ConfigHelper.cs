@@ -39,5 +39,11 @@ namespace PlayInThirdPerson
 			string data = JsonConvert.SerializeObject(Config, Formatting.Indented);
 			File.WriteAllText(ConfigFilePath, data);
 		}
+
+		public static void SaveNewConfig(Config config)
+		{
+			Config = config;
+			SaveConfig();
+		}
 	}
 }

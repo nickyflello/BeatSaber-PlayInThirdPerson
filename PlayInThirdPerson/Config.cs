@@ -20,6 +20,15 @@ namespace PlayInThirdPerson
 			public float Z;
 		}
 
+		public bool Enabled = true;
 		public Vector3 Offset = new Vector3(0f, 0f, -1f);
+
+		public Config() { }
+
+		public Config(Config rhs)
+		{
+			Enabled = rhs.Enabled;
+			Offset = rhs.Offset;
+		}
 	}
 }

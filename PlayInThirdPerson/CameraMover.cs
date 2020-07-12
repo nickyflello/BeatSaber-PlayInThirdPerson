@@ -18,7 +18,14 @@ namespace PlayInThirdPerson
 		private void LateUpdate()
 		{
 			// Add offset to camera
-			transform.localPosition = CameraOffset;
+			if (Plugin.IsEnabled)
+			{
+				transform.localPosition = CameraOffset;
+			}
+			else
+			{
+				transform.localPosition = Vector3.zero;
+			}
 		}
 	}
 }

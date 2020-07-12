@@ -8,8 +8,11 @@ namespace PlayInThirdPerson.Harmony_Patches
 	{
 		static void Postfix(PlayerController __instance)
 		{
-			Vector3 headPos = __instance.headPos - ConfigHelper.Config.Offset;
-			ReflectionHelper.SetField(__instance, "_headPos", headPos);
+			if (Plugin.IsEnabled)
+			{
+				Vector3 headPos = __instance.headPos - ConfigHelper.Config.Offset;
+				ReflectionHelper.SetField(__instance, "_headPos", headPos);
+			}
 		}
 	}
 }
