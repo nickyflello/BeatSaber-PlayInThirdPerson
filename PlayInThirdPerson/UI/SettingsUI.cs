@@ -13,8 +13,15 @@ namespace PlayInThirdPerson.UI
 			set => _tempConfig.Enabled = value;
 		}
 
-		[UIValue("offsetZ")]
-		public float PositionX
+		[UIValue("cameraOffsetY")]
+		public float CameraOffsetY
+		{
+			get => _tempConfig.Offset.Y;
+			set => _tempConfig.Offset.Y = value;
+		}
+
+		[UIValue("cameraOffsetZ")]
+		public float CameraOffsetZ
 		{
 			get => _tempConfig.Offset.Z;
 			set => _tempConfig.Offset.Z = value;

@@ -98,8 +98,7 @@ namespace PlayInThirdPerson
 		{
 			if (nextScene.name == "MenuViewControllers" && prevScene.name == "EmptyTransition")
 			{
-				// UI not working - Throwing internal null ref exception
-				//BSMLSettings.instance.AddSettingsMenu("Third Person", "PlayInThirdPerson.UI.SettingsUI.bsml", SettingsUI.instance);
+				BSMLSettings.instance.AddSettingsMenu("Third Person", "PlayInThirdPerson.UI.SettingsUI.bsml", SettingsUI.instance);
 			}
 		}
 	}
