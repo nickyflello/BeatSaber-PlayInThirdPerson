@@ -2,11 +2,13 @@
 using HarmonyLib;
 using IPA;
 using PlayInThirdPerson.UI;
+using ScoreSaber;
 using System;
 using System.Linq;
 using System.Reflection;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 namespace PlayInThirdPerson
 {
@@ -38,25 +40,9 @@ namespace PlayInThirdPerson
 
 		private void GameSceneLoaded()
 		{
-			try
-			{
-				// Find the replay player and check if we are in a replay.
-				// We don't have access to the assembly info here, so use reflection and string comparisons.
-				Component replayPlayer =
-					(GameObject.FindObjectsOfType(typeof(GameObject)) as GameObject[])
-					.First(obj => obj.name.Contains("ReplayPlayer"))
-					.GetComponents<Component>()
-					.First(c => c.GetType().Name.Contains("ReplayPlayer"));
 
-				IsPlayingReplay = ReflectionHelper.GetField<bool>(replayPlayer, "#=ziUDn9LCmOc4NDTUp$WvNusk="); // Cool field name.
-				Console.WriteLine($"[PlayInThirdPerson] IsPlayingReplay: {IsPlayingReplay}");
-			}
-			catch (Exception e)
-			{
-				Console.WriteLine("[PlayInThirdPerson] Failed to check replay game state, asumming non-replay");
-				Console.WriteLine(e);
-				IsPlayingReplay = false;
-			}
+			ReplayPlayer replayPlayer = GameObject.FindObjectOfType<ReplayPlayer>();
+			IsPlayingReplay = (replayPlayer != null) ? replayPlayer.playbackEnabled : false;
 
 			if (IsEnabled)
 			{
@@ -80,7 +66,7 @@ namespace PlayInThirdPerson
 
 			BS_Utils.Utilities.BSEvents.OnLoad();
 			BS_Utils.Utilities.BSEvents.lateMenuSceneLoadedFresh += LateMenuSceneLoadedFresh;
-			BS_Utils.Utilities.BSEvents.menuSceneLoaded += MenuSceneLoaded; ;
+			BS_Utils.Utilities.BSEvents.menuSceneLoaded += MenuSceneLoaded;
 			BS_Utils.Utilities.BSEvents.gameSceneLoaded += GameSceneLoaded;
 			SceneManager.activeSceneChanged += OnActiveSceneChanged;
 			ConfigHelper.LoadConfig();
@@ -90,7 +76,7 @@ namespace PlayInThirdPerson
 		public void OnApplicationQuit()
 		{
 			BS_Utils.Utilities.BSEvents.gameSceneLoaded -= GameSceneLoaded;
-			BS_Utils.Utilities.BSEvents.menuSceneLoaded -= MenuSceneLoaded; ;
+			BS_Utils.Utilities.BSEvents.menuSceneLoaded -= MenuSceneLoaded;
 			BS_Utils.Utilities.BSEvents.lateMenuSceneLoadedFresh -= LateMenuSceneLoadedFresh;
 		}
 

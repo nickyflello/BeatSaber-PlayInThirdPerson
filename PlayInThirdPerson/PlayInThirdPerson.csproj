@@ -46,6 +46,9 @@
     <Reference Include="IPA.Loader">
       <HintPath>C:\Program Files (x86)\Steam\steamapps\common\Beat Saber\Beat Saber_Data\Managed\IPA.Loader.dll</HintPath>
     </Reference>
+	<Reference Include="ScoreSaber">
+      <HintPath>C:\Program Files (x86)\Steam\steamapps\common\Beat Saber\Plugins\ScoreSaber.dll</HintPath>
+    </Reference>
     <Reference Include="BSML">
       <HintPath>C:\Program Files (x86)\Steam\steamapps\common\Beat Saber\Plugins\BSML.dll</HintPath>
     </Reference>
@@ -55,8 +58,18 @@
     <Reference Include="Main">
       <HintPath>C:\Program Files (x86)\Steam\steamapps\common\Beat Saber\Beat Saber_Data\Managed\Main.dll</HintPath>
     </Reference>
+    <Reference Include="BeatmapCore">
+      <HintPath>C:\Program Files (x86)\Steam\steamapps\common\Beat Saber\Beat Saber_Data\Managed\BeatmapCore.dll</HintPath>
+    </Reference>
+    <Reference Include="GameplayCore">
+      <HintPath>C:\Program Files (x86)\Steam\steamapps\common\Beat Saber\Beat Saber_Data\Managed\GameplayCore.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
     <Reference Include="HMLib">
       <HintPath>C:\Program Files (x86)\Steam\steamapps\common\Beat Saber\Beat Saber_Data\Managed\HMLib.dll</HintPath>
+    </Reference>
+    <Reference Include="HMUI">
+      <HintPath>C:\Program Files (x86)\Steam\steamapps\common\Beat Saber\Beat Saber_Data\Managed\HMUI.dll</HintPath>
     </Reference>
     <Reference Include="Newtonsoft.Json">
       <HintPath>C:\Program Files (x86)\Steam\steamapps\common\Beat Saber\IPA\Libs\Newtonsoft.Json.dll</HintPath>
@@ -79,6 +92,16 @@
     <Reference Include="UnityEngine.UIModule">
       <HintPath>C:\Program Files (x86)\Steam\steamapps\common\Beat Saber\Beat Saber_Data\Managed\UnityEngine.UIModule.dll</HintPath>
     </Reference>
+    <Reference Include="Zenject">
+      <HintPath>C:\Program Files (x86)\Steam\steamapps\common\Beat Saber\Beat Saber_Data\Managed\Zenject.dll</HintPath>
+    </Reference>
+    <Reference Include="Zenject-usage">
+      <HintPath>C:\Program Files (x86)\Steam\steamapps\common\Beat Saber\Beat Saber_Data\Managed\Zenject-usage.dll</HintPath>
+    </Reference>
+    <Reference Include="SiraUtil">
+      <HintPath>C:\Program Files (x86)\Steam\steamapps\common\Beat Saber\Plugins\SiraUtil.dll</HintPath>
+      <Private>false</Private>
+    </Reference>
     <Reference Include="Polyglot.Scripts, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>C:\Program Files (x86)\Steam\steamapps\common\Beat Saber\Beat Saber_Data\Managed\Polyglot.Scripts.dll</HintPath>
@@ -89,7 +112,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Harmony Patches\PlayerControllerUpdate.cs" />
+    <Compile Include="Harmony Patches\PlayerTransformsUpdate.cs" />
     <Compile Include="ReflectionHelper.cs" />
     <Compile Include="ConfigHelper.cs" />
     <Compile Include="Config.cs" />

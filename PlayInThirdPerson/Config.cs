@@ -21,7 +21,7 @@ namespace PlayInThirdPerson
 		}
 
 		public bool Enabled = true;
-		public Vector3 Offset = new Vector3(0f, 0f, -1f);
+		public Vector3 Offset = new Vector3(0f, 0f, -0.5f);
 
 		public Config() { }
 
