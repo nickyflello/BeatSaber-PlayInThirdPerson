@@ -1,11 +1,9 @@
-# Play In Third Person
-Ever wanted to play Beat Saber in third person?
-You probably didn't, but now you can!
 
-View your sabers better in real time.
+# Play In Third Person
+View your swings better as you play.
 
 ## Requirements
-- Beat Saber version 1.10.0 (Probably works with 1.8 and 1.9)
+- Beat Saber version 1.13.2
 - BSUtils 1.4.1+
 - Harmony
 - BSML
